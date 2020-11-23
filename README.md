@@ -57,7 +57,7 @@ Terraform v0.11.7
 
 The Jenkins DevOps Toolkit Docker container uses two bind-mounted directories on the host. The first, the Jenkins' home directory, contains all required configuration. The second directory is used for backups, created using the Jenkins Backup plugin. Additionally, Jenkins can back up its configuration, using the SCM Sync plugin, to GitHub. Both these backup methods require additional configuration.
 
-![Jenkins DevOps Docker Image Architecture](https://github.com/garystafford/jenkins-devops/blob/master/pics/architecture.png)
+![Jenkins DevOps Docker Image Architecture](https://github.com/nir750/jenkins-devops/blob/master/pics/architecture.png)
 
 ## Quick Start
 
@@ -85,17 +85,15 @@ INFO: Successfully installed 2 plugins.
 
 ## Optional: Create Docker Image
 
-The latest `garystafford/jenkins-devops` image is available on [Docker Hub](https://hub.docker.com/r/garystafford/jenkins-devops/).
-
 Optionally, to create a new image from the Dockerfile
 
 ```bash
-docker build -t garystafford/jenkins-devops:2018.04.19 .
+docker build -t nir750/jenkins-devops:2018.04.19 .
 ```
 
 ## Run the Container
 
-Create a new container from `garystafford/jenkins-devops:2018.04.19` image
+Create a new container from `nir750/jenkins-devops:2018.04.19` image
 
 ```bash
 sh ./stack_deploy_local.sh
@@ -121,10 +119,10 @@ Set git/GitHub repo path to your config repo, for example: `https://<personal_ac
 
 ```bash
 docker exec -it $(docker ps | grep jenkins-devops | awk '{print $1}') \
-  bash -c 'git config --global user.email "garystafford@rochester.rr.com"'
+  bash -c 'git config --global user.email "nir@blabla.com"'
 
 docker exec -it $(docker ps | grep jenkins-devops | awk '{print $1}') \
-  bash -c 'git config --global user.name "Gary A. Stafford"'
+  bash -c 'git config --global user.name "Nir.S"'
 ```
 
 ## Optional: AWS SSL Keys
@@ -171,13 +169,13 @@ To modify, build, and test locally, replacing my Docker Hub repo name switch you
 
 ```bash
 # build
-docker build --no-cache -t garystafford/jenkins-devops:2018.04.19 .
+docker build --no-cache -t nir750/jenkins-devops:2018.04.19 .
 
 # run temp copy only
-docker run -d --name jenkins-temp -p 8083:8080/tcp -p 50000:50000/tcp garystafford/jenkins-devops:2018.04.19
+docker run -d --name jenkins-temp -p 8083:8080/tcp -p 50000:50000/tcp nir750/jenkins-devops:2018.04.19
 
 # push
-docker push garystafford/jenkins-devops:2018.04.19
+docker push nir750/jenkins-devops:2018.04.19
 
 # clean up container and local bind-mounted directory
 rm -rf ~/jenkins_home
