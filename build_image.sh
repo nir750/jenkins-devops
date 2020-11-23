@@ -13,4 +13,4 @@ docker pull jenkins/jenkins:latest
 # build new image
 docker build --file Dockerfile \
   --no-cache \
-  -t garystafford/jenkins-devops:${IMAGE_TAG} .
+  -t nir750/jenkins-devops:${IMAGE_TAG} .
