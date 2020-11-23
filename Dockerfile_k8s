@@ -1,6 +1,6 @@
 FROM jenkins/jenkins:latest
 
-LABEL maintainer "Gary A. Stafford <garystafford@rochester.rr.com>"
+LABEL maintainer "Nir.S <nir@blabla.com>"
 ENV REFRESHED_AT 2018-04-25
 
 # set variables - *** CHANGE ME ***
@@ -42,7 +42,7 @@ RUN set +x \
 
 # set permissions for jenkins user
 RUN set +x \
-    && usermod -aG staff,docker jenkins \
+    && usermod -aNir ,docker jenkins \
   && exec bash
 
 # install google-cloud-sdk (gcloud and kubectl)
