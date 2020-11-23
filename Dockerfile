@@ -1,6 +1,6 @@
 FROM jenkins/jenkins:latest
 
-LABEL maintainer "Gary A. Stafford <garystafford@rochester.rr.com>"
+LABEL maintainer "Nir.S <nir@blabla.com>"
 ENV REFRESHED_AT 2018-04-19
 
 # set variables - *** CHANGE ME ***
@@ -41,7 +41,7 @@ RUN set +x \
 
 # set permissions for jenkins user
 RUN set +x \
-    && usermod -aG staff,docker jenkins \
+    && usermod -aNir ,docker jenkins \
   && exec bash
 
 # install Docker Compose
