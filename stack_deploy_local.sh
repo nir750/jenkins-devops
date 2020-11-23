@@ -15,7 +15,7 @@ mkdir -p ~/jenkins_home/.ssh/ || echo "Directory already exists..."
 mkdir -p ~/jenkins_home/backup/ || echo "Directory already exists..."
 
 # ensure latest image is pulled...
-# docker pull garystafford/jenkins-devops:${IMAGE_TAG}
+# docker pull nir750/jenkins-devops:${IMAGE_TAG}
 
 # create Jenkins container
 docker-compose \
@@ -35,9 +35,6 @@ docker exec -it ${JENKINS_CONTAINER} \
 docker exec -it -u root ${JENKINS_CONTAINER} \
   bash -c "ls -al /var/run/docker.sock && chgrp jenkins /var/run/docker.sock"
 
-# docker exec -u root -it ${JENKINS_CONTAINER} \
-# bash -c "git clone git@github.com:garystafford/jenkins-config.git scm-sync-configuration/checkoutConfiguration" \
-# || echo 'An error occurred?!'
 
 docker logs $(docker ps | grep jenkops | awk '{print $1}')
 
