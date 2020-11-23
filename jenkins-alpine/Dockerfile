@@ -1,6 +1,6 @@
 FROM jenkins:alpine
 
-LABEL maintainer "Gary A. Stafford <garystafford@rochester.rr.com>"
+LABEL maintainer "Nir.S <nir@blabla.com>"
 LABEL refreshed_at 2017-05-24
 
 # switch to install packages via apk
